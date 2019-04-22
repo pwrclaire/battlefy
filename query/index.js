@@ -1,21 +1,15 @@
 const fetch = require('node-fetch');
-const { APIKEY } = require('../config');
 
 const header = {
   headers: {
-    'X-Riot-Token': APIKEY
+    'X-Riot-Token': process.env.APIKEY
   }
 }
 
 const getSummoner = async (summoner, region) => {
   try {
     const url = `https://${region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}`;
-    const options = {
-      headers: {
-        'X-Riot-Token': APIKEY
-      }
-    }
-    const response = await fetch(url, options);
+    const response = await fetch(url, header);
     const data = await response.json();
     return data;
   }
