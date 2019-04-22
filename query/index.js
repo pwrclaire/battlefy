@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+require('dotenv').config();
 
 const header = {
   headers: {
@@ -8,6 +9,7 @@ const header = {
 
 const getSummoner = async (summoner, region) => {
   try {
+    console.log("WHATS MY ENV", header);
     const url = `https://${region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}`;
     const response = await fetch(url, header);
     const data = await response.json();
