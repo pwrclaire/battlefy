@@ -1,4 +1,4 @@
-# Battlefy - LoL Stats Application
+# Battlefy - League of Legends Stats Application
 
 Backend for https://battlefy-frontend.herokuapp.com/
 
